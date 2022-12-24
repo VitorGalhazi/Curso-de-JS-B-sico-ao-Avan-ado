@@ -38,7 +38,7 @@
         Celsius para Fahrenheit
 
         <div id="caixa_azul">
-            38
+            20
         </div>
 
      <div id="caixa_amarela">
@@ -46,18 +46,41 @@
      </div>
 
      <script>
-        function celsius(){
-            var celsius = document.getElementById('caixa_azul').innerHTML;
-            var far = (9 * celsius / 5) + 32;
-            document.getElementById('caixa_amarela').innerHTML = far;
+        function CelsiusToFahre(cels){
+            var far = (9 * cels / 5) + 32;
+            return far;
         }
 
-        celsius();
+        var celsius = parseFloat(document.getElementById("caixa_azul").innerHTML);
+        var fahre = CelsiusToFahre(celsius);
+        document.getElementById("caixa_amarela").innerHTML = fahre;
+
      </script>
 
       -->
 
-      <!-- 
+      <!--  
+
+        <script>
+            
+            var grupos = [ 
+                [ "João" , "Maria" ],
+                [ "Pedro" , "Joana", "André", "Júlio" ],
+                [ "Carolina" , "Helena", "Marcelo" ]
+            ]; 
+
+            var novos_grupos = grupos.slice(-2);
+
+            novos_grupos.push(['Mariana', 'Felipe', 'Carla']);
+
+            
+        </script>
+
+      -->
+
+      
+
+       <!--  
 
          <div class="categoria" style="display: flex; flex-direction: row;">
         Título: <div id="titulo"> </div>
@@ -81,7 +104,7 @@
         var titulo;
         var total;
 
-
+        
         var curso = {
             'titulo': "Aprenda programação em Python",
             'categoria': ['Programação', 'tecnologia', 'Python'],
@@ -95,8 +118,8 @@
                 return total;
             },
             'media' : function(){
-                media = ((this.n_aval_5_estrelas * 5) + (this.n_aval_4_estrelas * 4) + (this.n_aval_3_estrelas * 3) + (this.n_aval_2_estrelas * 2) + (this.n_aval_1_estrela * 1)) / 5;
-                return media;
+                media = ((this.n_aval_5_estrelas * 5) + (this.n_aval_4_estrelas * 4) + (this.n_aval_3_estrelas * 3) + (this.n_aval_2_estrelas * 2) + (this.n_aval_1_estrela * 1)) / total;
+                return media.toFixed(1);
             },
         }
 
@@ -116,7 +139,7 @@
 
        -->
 
-       <!-- 
+       
             <div id="tabela">    
             
             </div>
@@ -142,7 +165,7 @@
 
             </script>
 
-        -->
+        
 
 </body>
 </html>
