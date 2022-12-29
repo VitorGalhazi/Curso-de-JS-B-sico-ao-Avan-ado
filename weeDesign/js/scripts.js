@@ -162,6 +162,26 @@ var Year_Atual = Ano_Atual.getFullYear();
 
 document.getElementById("current_year").innerHTML = Year_Atual;
 
+//-23.63724595318134, -46.55284168754951
 
+//Mapa
+
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  const uluru = { lat: -23.63724595318134, lng: -46.55284168754951 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 18,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+}
+
+window.initMap = initMap;
 
    
