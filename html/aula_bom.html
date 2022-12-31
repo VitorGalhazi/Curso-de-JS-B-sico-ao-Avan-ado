@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="doc" style="display: flex; flex-direction: row">
+        <input type="text" id="batata">
+        <button id="botao">ENVIAR</button>
+    </div>
+
+    <div id="mostrar" style="display: flex; flex-direction: column; visibility: hidden;">
+        <div id="vatata" style="display:flex; flex-direction: row;">
+            <p id="mensagem">Olá,</p>
+            <p id="nome"></p>
+        </div>
+        <div id="vatata" style="display:flex; flex-direction: row;">
+            <a href="#">Não é <span id="name"></span></a>
+        </div>
+    </div>
+
+    <script>
+
+        //Mousemove
+       /*  window.onmousemove = function(e){
+            if(e.pageY < 6){
+                alert("Não perca os  descontos exclusivos!")
+            }
+        } */
+
+
+        //Localstore
+
+        document.getElementById("botao").onclick = function (){
+
+             var nome  = document.getElementById("batata").value;
+             window.localStorage.setItem("nome", nome);
+
+            document.getElementById("doc").style.display = "none";
+            document.getElementById("nome").innerHTML = nome + "!";
+            document.getElementById("name").innerHTML = nome + "?";
+
+            document.getElementById("mostrar").style.visibility = "visible";
+
+        }
+
+        document.getElementById("name").onclick = function (){
+
+            document.getElementById("mostrar").style.display = "none";
+            document.getElementById("doc").style.display = "flex";
+
+        }
+
+    </script>
+
+
+</body>
+</html>

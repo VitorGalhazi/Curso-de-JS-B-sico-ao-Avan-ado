@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        var data_um = new Date("2018-03-20");
+        data_um = data_um.getTime();
+
+        var data_dois = new Date("2018-04-06");
+        data_dois = data_dois.getTime();
+
+
+        var diferenca_epoch = data_dois - data_um;
+
+        console.log(diferenca_epoch / 86400000)
+
+    </script>
+
+
+</body>
+</html>
