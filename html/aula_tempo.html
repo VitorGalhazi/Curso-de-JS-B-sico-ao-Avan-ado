@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempo</title>
+</head>
+<body>
+
+    <script>
+
+        //SetTimeOut
+
+       /* alert("Mensagem 1");
+
+        window.setTimeout(function(){
+           alert("Mensagem 2")
+
+        }, 3000); */
+
+
+        //SetInterval
+
+       /*  var count = 0;
+
+        var inter = window.setInterval(function(){
+
+            alert(count);
+            count++;
+
+            if(count > 10){
+                window.clearInterval(inter);
+                alert("Contagem finalizada!");
+            }
+
+        }, 1000); */
+
+    </script>
+
+    <!-- Desafio do Cronometro -->
+
+   <!--  <label for="tempo">Quantos segundos?
+        <input type="number" required id="tempo">
+    </label>
+    <button onclick="comecar()">COMEÇAR A CONTAGEM</button>
+
+    <div id="relogio">
+        00
+    </div>
+
+    <script>
+
+        function comecar(){
+
+            var count = 00;
+
+            var tempoLimite = parseInt(document.getElementById("tempo").value);
+
+            var inter = window.setInterval(function(){
+
+                if(count <= tempoLimite){
+
+                    if(count<=9){
+                        document.getElementById("relogio").innerHTML = "0" + count;
+                    }else{
+                        document.getElementById("relogio").innerHTML = count;
+                    } 
+                    count++; 
+
+                }else{
+                    window.clearInterval(inter);
+                }
+    
+            }, 1000); 
+
+        };
+ -->
+    </script>
+
+    <!-- Desafio do Relógio -->
+
+    
+    <!-- <div id="relogio">
+        00:00:00
+    </div>
+
+    <script>
+
+        var inter = window.setInterval(function(){
+
+            var Data = new Date();
+
+            var Hora = Data.getHours();
+
+            var Seconds = Data.getSeconds();
+
+            var Minutes = Data.getMinutes();
+
+
+            function format_time(time){
+
+                if(time >= 0 && time <=9){
+                    var format_time = time.toString();
+                    format_time = "0" + format_time;
+                }else{
+                    var format_time =  time.toString();
+                }
+                return format_time;
+            }
+
+            document.getElementById("relogio").innerHTML = format_time(Hora) + ":" + format_time(Minutes) + ":" + format_time(Seconds);
+
+        }, 1000); 
+
+
+    </script> -->
+
+</body>
+</html>
