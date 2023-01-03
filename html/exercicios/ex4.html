@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="carregar()">
+    
+    <select id="estados">
+        <option selected value="Selecione">Selecione o Estado (UF)</option>
+        <option value="Acre">Acre</option>
+        <option value="Alagoas">Alagoas</option>
+        <option value="Amapa">Amapá</option>
+        <option value="Amazonas">Amazonas</option>
+        <option value="Bahia">Bahia</option>
+        <option value="Ceara">Ceará</option>
+        <option value="Distrito_Federal">Distrito Federal</option>
+        <option value="Espirito_Santo">Espírito Santo</option>
+        <option value="Goias">Goiás</option>
+        <option value="Maranhao">Maranhão</option>
+        <option value="Mato_Grosso">Mato Grosso</option>
+        <option value="Mato_Grosso_do_Sul">Mato Grosso do Sul</option>
+        <option value="Minas_Gerais">Minas Gerais</option>
+        <option value="Para">Pará</option>
+        <option value="Paraiba">Paraíba</option>
+        <option value="Parana">Paraná</option>
+        <option value="Pernambuco">Pernambuco</option>
+        <option value="Piaui">Piauí</option>
+        <option value="Rio_de_Janeiro">Rio de Janeiro</option>
+        <option value="Rio_Grande_do_Sul">Rio Grande do Sul</option>
+        <option value="Rio_Grande_do_Norte">Rio Grande do Norte</option>
+        <option value="Rondonia">Rondônia</option>
+        <option value="Roraima">Roraima</option>
+        <option value="Santa_Catarina">Santa Catarina</option>
+        <option value="São_Paulo">São Paulo</option>
+        <option value="Sergipe">Sergipe</option>
+        <option value="Tocantins">Tocantins</option>
+    </select>
+
+    <script>
+
+        document.getElementById("estados").onchange = function (){
+            var selecionar = document.getElementById("estados").value;
+
+            localStorage.setItem("estados", selecionar);
+
+        }
+
+        function carregar(){
+
+            var dado = localStorage['estados'];
+
+            var selecionar = document.getElementById("estados").innerHTML;
+
+            document.getElementById("estados").innerHTML = selecionar + "<option selected value = ' " + dado + "'> " + dado + "</option>";
+        }
+
+    </script>
+
+    <br><br><br>
+
+    <select id="envios">
+        <option selected value="escolha">Selecione o tipo de envio</option>
+        <option value="normal">Envio Normal (18 dias)</option>
+        <option value="express">Envio Express (12 dias)</option>
+    </select>
+
+    <button id="confirmar_pedido">Confirmar</button>
+
+    <br>
+
+    <div>
+        <p>Data do pedido: <b id="data_pedido"></b></p>
+        <p>Data prevista de entrega: <b id="data_entrega"></b></p>
+    </div>
+
+
+    <script>
+
+        var pedidoData = new Date();
+        var pedidoDia = pedidoData.getDay() + 1;
+        var pedidoMonth = pedidoData.getMonth() + 1;
+        var pedidoAno = pedidoData.getFullYear();
+        
+
+        document.getElementById("envios").onchange = function (){
+
+            var envios = document.getElementById("envios").value;
+
+            document.getElementById("data_pedido").innerHTML = "0" + pedidoDia + "/" + "0" + pedidoMonth + "/" + pedidoAno;
+
+            if(envios == "normal"){
+
+                var prazoData = new Date();
+                var prazoDia = prazoData.getDay() + 18;
+                var prazoMonth = prazoData.getMonth() + 1;
+                var prazoAno = prazoData.getFullYear();
+
+                document.getElementById("data_entrega").innerHTML = "0" + prazoDia + "/" + "0" + prazoMonth + "/" + prazoAno;
+               
+            }
+
+        }
+
+
+
+
+    </script>
+
+    <br><br><br>
+
+</body>
+</html>

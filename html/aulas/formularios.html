@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulários</title>
+    </head>
+
+    <body>
+
+        <h5>Select Box</h5>
+
+        <form>
+            <select id="options">
+                <option id="" value="opt1">Praia</option>
+                <option value="opt2">Montanha</option>
+                <option value="opt3">Cidade</option>
+            </select>
+        </form>
+
+        <br>
+
+        <button id="mostrar_option">Mostrar</button>
+
+        <br>
+
+        <p>Solte aqui a opção selecionada: <strong id="opcao_selecionada"></strong></p>
+
+        <br><br>
+
+        <script>
+
+            document.getElementById("mostrar_option").onclick = function(){
+
+               var option =  document.getElementById("options");
+               var campo_selected = option.options.selectedIndex;
+               var result = option.options[campo_selected].innerHTML;
+               document.getElementById("opcao_selecionada").innerHTML = result;
+
+            }
+
+        </script>
+
+        <h5>Radio Buttons</h5>
+
+        <form>
+
+            <input type="radio" name="genero" value="Masculino" checked> Masculino<br>
+            <input type="radio" name="genero" value="Feminino"> Feminino<br>
+            <input type="radio" name="genero" value="Prefiro não dizer"> Prefiro não dizer
+            
+        </form>
+
+        <br>
+
+        <button id="mostrar_radio">Mostrar</button>
+
+        <p>Solte aqui a opção selecionada: <strong id="radio_selecionado"></strong></p>
+
+        <script>
+
+            document.getElementById("mostrar_radio").onclick = function () {
+
+            var radio = document.getElementsByName("genero");
+
+            var radio_selected;
+
+            for (var a = 0;  a < radio.length; a++) {
+                if (radio[a].checked) {
+                    radio_selected = radio[a].value;
+                }
+            }
+
+            document.getElementById("radio_selecionado").innerHTML = radio_selected;
+
+            };
+
+        </script>
+
+        <br><br>
+
+        <h5>CheckBoxes</h5>
+
+        <form>
+
+            <input type="checkbox" name="interesse" value="Desenvolvimento Front-End"> Desenvolvimento Front-End<br>
+            <input type="checkbox" name="interesse" value="Desenvolvimento Back-End"> Desenvolvimento Back-End<br>
+            <input type="checkbox" name="interesse" value="Design"> Design
+            
+        </form>
+
+        <br>
+
+        <button id="mostrar_check">Mostrar</button>
+
+        <p>
+            Solte aqui as opção selecionadas em lista: <br>
+            <strong id="check_selecionado"></strong>
+        </p>
+
+
+    </body>
+
+</html>
