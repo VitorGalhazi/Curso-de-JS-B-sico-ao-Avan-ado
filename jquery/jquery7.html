@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>Jquery</title>
+    <style>
+
+        #quadra{
+            background-color: black;
+            width: 40px;
+            height: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- <button id="botao-esconder">Esconder</button>
+    <h4 style="display: none" id="texto-escondido">O botão foi escondido</h4>
+    <br>
+
+    <script>
+
+    $( "#botao-esconder" ).click(function() {
+       
+        $(this).hide(500);
+        $("#texto-escondido").show();
+        
+    });
+        
+
+    </script> -->
+
+
+    <!-- Método Animated -->
+
+    <div id="quadra">
+
+    </div>
+
+    <script>
+
+        /*$("#quadra").click(function (){
+            $('#quadra').animate({
+                width: '+=20px',
+                height: '+=20px'
+            });
+        }); */
+
+
+        $("#quadra").click(function (){
+
+            $("#quadra")
+            
+                .animate({ width: '+=20px'}, 500)
+                .animate({ height: '+=20px'}, 500);
+
+             });
+
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>jquery</title>
+</head>
+<body>
+
+    <input id="nome" type="text" placeholder="Nome...">
+                
+    &nbsp;&nbsp;
+
+    <button style="display:none" id="confirmar">Confirmar</button>
+    <br>
+
+    <script>
+        $("#nome").keydown(function (){
+
+            var bata = $("#nome").val();
+
+            if(bata){
+                $("#confirmar").css("display", "block");
+            }else{
+                $("#confirmar").css("display", "none");
+            }
+
+        });
+    </script>
+
+</body>
+</html>

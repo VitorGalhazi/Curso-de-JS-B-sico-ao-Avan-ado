@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>jquery</title>
+</head>
+<body>
+
+
+   <!-- 
+    
+    //Input normal
+    <input type="text" id="input">
+
+   <script>
+
+       /*  $("#input").change(function(){
+            var conteudo_input = $("#input").val();
+
+            alert(conteudo_input);
+        }); */
+
+   </script> -->
+
+
+  <!-- 
+
+
+    
+    //Radio Button
+    <form>
+
+        <span><input type="radio" name="genero" value="M" checked> Masculino</span><br>
+        <span><input type="radio" name="genero" value="F"> Feminino</span><br>
+        <span><input type="radio" name="genero" value="NONE"> Prefiro não dizer</span>
+        
+    </form>
+
+    <script>
+
+        var input_checked =$("input[name='genero']:checked").parent("span").text();
+
+        alert(input_checked)
+
+    </script> -->
+
+
+
+    <!-- Radio Button -->
+<!-- 
+    <form>
+        <select id="options">
+            <option value="opt1">Praia</option>
+            <option value="opt2">Montanha</option>
+            <option value="opt3">Cidade</option>
+        </select>
+    </form>
+
+    <script>
+
+        var formula  = $("#options").find(':selected').text();
+
+        alert(formula)
+
+    </script> -->
+
+
+    <form>
+
+        <span><input type="checkbox" name="interesse" value="DFE"> Desenvolvimento Front-End</span><br>
+        <span><input type="checkbox" name="interesse" value="DBE"> Desenvolvimento Back-End</span><br>
+        <span><input type="checkbox" name="interesse" value="Design"> Design</span>
+        
+    </form>
+    
+    <script>
+
+        
+
+    $("input[name='interesse']").change(function() {
+
+        var checkboxes_selecionados = $("input[name='interesse']:checked");
+        var textos = [];
+
+        $.each(checkboxes_selecionados, function( index, value ) {
+            
+            textos.push($(value).parent("span").text());
+
+        });
+
+        console.log(textos);
+
+    });
+
+    </script>
+</body>
+</html>

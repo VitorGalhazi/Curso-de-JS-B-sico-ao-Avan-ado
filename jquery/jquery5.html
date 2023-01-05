@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>jquery</title>
+</head>
+<body>
+
+    <p class="normal" id="paragrafo-classes">
+        Este parágrafo tem a classe "normal". Vamos adicionar a ele a classe "styling" e ver o que acontece.
+    </p>
+
+    <button id="adicionar_classe">Adicionar Classe</button>
+    <button id="remover_classe">Remover Classe</button>
+    <button id="alternar_classe">Alternar Classe</button>
+
+    <script>
+    
+        $("#adicionar_classe").click(function(){
+            $("#paragrafo-classes").addClass('styling');
+        });
+
+        $("#remover_classe").click(function(){
+            $("#paragrafo-classes").removeClass('styling');
+        });
+
+        $("#alternar_classe").click(function(){
+            $("#paragrafo-classes").toggleClass('styling');
+        });
+
+    </script>
+
+</body>
+</html>
