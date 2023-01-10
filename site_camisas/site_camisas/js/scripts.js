@@ -50,14 +50,14 @@ var camisetas = {
             }
         }
     }
-}
+} 
 
 
 // parâmetros da pesquisa
 
-var parametros_pesquisa = {
+var parametros = {
     "quantidade": 10,
-    "cor": "colorida",
+    "cor": "branca",
     "gola": "gola_v",
     "qualidade": "q150",
     "estampa": "com_estampa",
@@ -82,11 +82,80 @@ var parametros_pesquisa = {
 
 // Resolução do desafio:
 
-$(function(){
 
-    // Se quiser uma sugestão dos passos a seguir para a resolução, veja mais abaixo.
-    
+
+function atualizar(){
+    var quantidade = parametros.quantidade;
+    var preco_unit = camisetas[parametros.cor][parametros.gola][parametros.estampa].preco_unit;
+    var foto = "img/" + camisetas[parametros.cor][parametros.gola][parametros.estampa].foto;
+
+    var valor_total = quantidade * preco_unit;
+
+    if (parametros.qualidade == "q190") {
+        valor_total *= 1.12;
+    }
+
+    if (parametros.embalagem == "unitaria") {
+        valor_total += (quantidade * 0.15);
+    }
+
+    if (quantidade >= 1000) {
+        valor_total *= 0.85;
+    } else if (quantidade >= 500) {
+        valor_total *= 0.90;
+    }  else if (quantidade >= 100) {
+        valor_total *= 0.95;
+    }
+
+    $("refresh-loader").hide();
+
+    var id_gola = "#" + parametros.gola;
+
+    var id_estampa = "option[value='" + parametros.estampa +  "']";
+
+    var id_qualidade = "#" + parametros.qualidade;
+
+    $("#result_cor").html(parametros.cor);
+    $("#result_estampa").html($(id_estampa).html());
+    $("#result_quantidade").html(parametros.quantidade);
+    $("#result_qualidade").html( $(id_qualidade).html() );
+    $("#result_gola").html( $(id_gola).html() );
+    $("#result_embalagem").html(parametros.embalagem);
+    $("#valor-total").html(valor_total.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 } ));
+}
+
+
+$(".option-filter div").click(function(){
+
+    $(this).parent().children("div").removeClass("selected");
+
+    $(this).addClass("selected");
+
+    var categoria = $(this).parent().attr("id");
+
+    parametros[categoria] = $(this).attr('id');
+
+    atualizar(parametros)
+
+})
+
+$("select").change(function(){
+
+    var parametro_select = $(this).attr('id');
+    parametros[parametro_select] = $(this).val();
+    atualizar(parametros);
+
 });
+
+$('#quant').change(function(){
+
+    var parametro_input = $(this).attr('id');
+    parametros[parametro_input] = $(this).val();
+    parametros['quantidade'] = parametros[parametro_input];
+    atualizar(parametros);
+
+});
+
 
 
 // Sugestão de etapas da resolução
